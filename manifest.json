@@ -1,0 +1,48 @@
+{
+  "name": "lgb_speedup",
+  "description": "lgb_speedup",
+  "version": "1.0",
+  "manifest_version": 3,
+
+  "permissions": [
+    "tabs",
+    "activeTab", 
+    "declarativeContent",
+    "scripting",
+    "unlimitedStorage",
+    "browsingData"
+  ],
+
+  "optional_permissions": [
+    
+  ],
+  
+  "host_permissions": [
+    "*://pc.lgb360.com/",
+    "*://goo.gl/"
+  ],
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://pc.lgb360.com/*"],
+      "js": ["inject_start.js"],
+      "run_at": "document_start"
+    }
+  ],
+  
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "icons": {
+    "16": "images/speed16.png",
+    "32": "images/speed32.png",
+    "48": "images/speed48.png",
+    "128": "images/speed128.png"
+  }
+}
