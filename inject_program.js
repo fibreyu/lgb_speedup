@@ -41,7 +41,7 @@ function start_next() {
 				console.log("start next video \"" + title + "\" !")
 				transition_box.click()
 				console.log("start_next")
-				
+				document.querySelector('video').play();
 				flag = 1
 				break
 			}
